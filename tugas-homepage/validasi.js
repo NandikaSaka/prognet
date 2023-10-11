@@ -34,7 +34,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Jika semua validasi berhasil, Anda dapat mengirimkan data
-        alert("Data telah berhasil dikirim.");
-        form.reset();
+        const formData = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "submit.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                alert(xhr.responseText);
+                form.reset();
+            }
+        };
+        xhr.send(formData);
     });
 });
