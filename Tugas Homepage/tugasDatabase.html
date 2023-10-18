@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Mahasiswa</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="formBiodata.html">Tugas Javascript</a></li>
+            <li><a href="tugasDatabase.html">Tugas Database</a></li>
+        </ul>
+    </nav>
+    <h1>Form Mahasiswa</h1>
+    <form action="insert.php" method="post" id="mahasiswaForm">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required><br><br>
+
+        <label for="nim">NIM:</label>
+        <input type="text" id="nim" name="nim" pattern="\d{10}" required><br><br>
+
+        <label for="prodi">Program Studi:</label>
+        <select id="prodi" name="prodi" required>
+            <option value="Teknik Arsitektur">Teknik Arsitektur</option>
+            <option value="Teknik Elekro">Teknik Elekro</option>
+            <option value="Teknik Industri">Teknik Industri</option>
+            <option value="Teknik Lingkungan">Teknik Lingkungan</option>
+            <option value="Teknik Mesin">Teknik Mesin</option>
+            <option value="Teknik Sipil">Teknik Sipil</option>
+            <option value="Teknologi Informasi">Teknologi Informasi</option>
+        </select><br><br>
+
+        <label>Jenis Kelamin:</label><br>
+        <input type="radio" id="laki" name="jenis_kelamin" value="Laki-laki" required>
+        <label for="laki">Laki-laki</label><br>
+        <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan" required>
+        <label for="perempuan">Perempuan</label><br><br>
+
+        <label>Hobi:</label><br>
+        <input type="checkbox" id="membaca" name="hobi[]" value="Membaca">
+        <label for="membaca">Membaca</label><br>
+        <input type="checkbox" id="menulis" name="hobi[]" value="Menulis">
+        <label for="menulis">Menulis</label><br>
+        <input type="checkbox" id="berenang" name="hobi[]" value="Berenang">
+        <label for="berenang">Berenang</label><br><br>
+
+        <input type="submit" value="Simpan">
+    </form>
+
+    <h2>Data Mahasiswa</h2>
+    <table id="mahasiswaTable">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Program Studi</th>
+                <th>Jenis Kelamin</th>
+                <th>Hobi</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data akan ditampilkan di sini -->
+        </tbody>
+    </table>
+
+    <script src="script2.js"></script>
+</body>
+</html>

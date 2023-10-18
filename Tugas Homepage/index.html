@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="formBiodata.html">Tugas Javascript</a></li>
+            <li><a href="tugasDatabase.html">Tugas Database</a></li>
+        </ul>
+    </nav>
+
+    <h1>BIODATA SAYA</h1>
+    <div id="displayBiodata">
+        <!-- Tampilkan foto profil -->
+        <img src="foto/fotoProfil.jpg" alt="Foto Profil" width="200px" height="200px">
+
+<h4>Halo, nama saya Made Nandika Saka Putra, seorang mahasiswa di program studi Teknologi Informasi, Fakultas Teknik, Universitas Udayana. Saya berumur 19 tahun. Saya memiliki bakat dan keingintahuan di bidang teknologi terutama di bidang programming, dan saya  akan terus meningkatkan pontensi saya di bidang ini.</h4>
+        <!-- Tampilkan biodata lainnya -->
+        <p><strong>Nama :</strong> <span id="displayNama"></span></p>
+        <p><strong>Alamat Gmail :</strong> <span id="displayEmail"></span></p>
+        <p><strong>Alamat Rumah :</strong> <span id="displayAlamat"></span></p>
+        <p><strong>NIM :</strong> <span id="displayPekerjaan"></span></p>
+        <p><strong>No HP :</strong> <span id="displayPortofolio"></span></p>
+    </div>
+    
+    <!-- Script untuk menampilkan data dari sessionStorage -->
+    <script>
+        const nama = sessionStorage.getItem("nama");
+        const email = sessionStorage.getItem("email");
+        const alamat = sessionStorage.getItem("alamat");
+        const pekerjaan = sessionStorage.getItem("pekerjaan");
+        const portofolio = sessionStorage.getItem("portofolio");
+
+        // Tampilkan data pada halaman
+        document.getElementById("displayNama").textContent = nama;
+        document.getElementById("displayEmail").textContent = email;
+        document.getElementById("displayAlamat").textContent = alamat;
+        document.getElementById("displayPekerjaan").textContent = pekerjaan;
+        document.getElementById("displayPortofolio").textContent = portofolio;
+    </script>
+</body>
+</html>
